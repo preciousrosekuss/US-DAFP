@@ -8,7 +8,6 @@ import plotly.graph_objects as go
 import plotly.express as px
 from dash import no_update
 
-
 # Create a dash application
 app = dash.Dash(__name__)
 
@@ -20,7 +19,6 @@ airline_data =  pd.read_csv('https://cf-courses-data.s3.us.cloud-object-storage.
                             encoding = "ISO-8859-1",
                             dtype={'Div1Airport': str, 'Div1TailNum': str, 
                                    'Div2Airport': str, 'Div2TailNum': str})
-
 
 # List of years 
 year_list = [i for i in range(2005, 2021, 1)]
@@ -49,7 +47,6 @@ def compute_data_choice_1(df):
     tree_data = df.groupby(['DestState', 'Reporting_Airline'])['Flights'].sum().reset_index()
     return bar_data, line_data, div_data, map_data, tree_data
 
-
 """Compute graph data for creating yearly airline delay report
 
 This function takes in airline data and selected year as an input and performs computation for creating charts and plots.
@@ -68,7 +65,6 @@ def compute_data_choice_2(df):
     avg_sec = df.groupby(['Month','Reporting_Airline'])['SecurityDelay'].mean().reset_index()
     avg_late = df.groupby(['Month','Reporting_Airline'])['LateAircraftDelay'].mean().reset_index()
     return avg_car, avg_weather, avg_NAS, avg_sec, avg_late
-
 
 # Application layout
 app.layout = html.Div(children=[ 
@@ -195,7 +191,6 @@ def get_graph(chart, year, children1, children2, c3, c4, c5):
                    dcc.Graph(figure=nas_fig), 
                    dcc.Graph(figure=sec_fig), 
                    dcc.Graph(figure=late_fig)]
-
 
 # Run the app
 if __name__ == '__main__':
