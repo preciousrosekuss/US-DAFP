@@ -124,6 +124,7 @@ app.layout = html.Div(children=[
                                 # REVIEW3: Observe how we add an empty division and providing an id that will be updated during callback
     
                                 html.Div([
+                                        html.Div([ ], id='plot1'),
                                         html.Div([ ], id='plot2'),
                                         html.Div([ ], id='plot3')
                                         ], 
