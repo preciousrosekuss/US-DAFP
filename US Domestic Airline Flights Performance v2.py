@@ -190,8 +190,7 @@ def get_graph(chart, year, children1, children2, c3, c4, c5):
                       color='Flights',
                       color_continuous_scale='RdBu',
                       title='Flight count by airline to destination state'
-                )
-            
+                )       
             
             # REVIEW6: Return dcc.Graph component to the empty division
             return [dcc.Graph(figure=tree_fig), 
@@ -216,9 +215,7 @@ def get_graph(chart, year, children1, children2, c3, c4, c5):
                    dcc.Graph(figure=weather_fig), 
                    dcc.Graph(figure=nas_fig), 
                    dcc.Graph(figure=sec_fig), 
-                   dcc.Graph(figure=late_fig)]
-
-
+                   dcc.Graph(figure=late_fig)
 # Run the app
 if __name__ == '__main__':
     app.run_server()
